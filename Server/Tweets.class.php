@@ -28,7 +28,8 @@ class Tweets extends Abraham\TwitterOAuth\TwitterOAuth{
             $clean_array[$id_array]["name"] = $object->user->name;
             $clean_array[$id_array]["screen_name"] = $object->user->screen_name;
             $clean_array[$id_array]["website_url"] = $object->user->url;
-
+            $clean_array[$id_array]["profile_image"] = $object->user->profile_image_url;
+            
             // check if there is an image in the tweet
             if(!empty($object->retweeted_status->entities->media)){
                 $media = $object->retweeted_status->entities->media;
