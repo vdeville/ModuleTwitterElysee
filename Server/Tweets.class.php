@@ -46,7 +46,7 @@ class Tweets extends Abraham\TwitterOAuth\TwitterOAuth{
 
     // Transform simple array to JSON for client side (Display)
     function transformToJson(array $tweets){
-        $handle = fopen("..\\Data\\data.json", "w+");
-        file_put_contents("..\\Data\\data.json", json_encode($tweets));
+        $handle = fopen("../Data/data.json", "w+");
+        file_put_contents("../Data/data.json", json_encode($tweets));
     }
 }

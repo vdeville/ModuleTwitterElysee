@@ -8,10 +8,10 @@ require "Tweets.class.php";
 use Abraham\TwitterOAuth\TwitterOAuth;
 
 // Connection to Twitter API.
-$CONSUMER_KEY = "";
-$CONSUMER_SECRET = "";
-$acces_token = "";
-$acces_token_secret = "";
+$CONSUMER_KEY = "xJpfpFYFQsVazhzcQxyU8OOqs";
+$CONSUMER_SECRET = "NNa4z362gmSHbAdhuWbvsOGKFpPRzmKltp8a4zK4QJh4YiwzKl";
+$acces_token = "967873903-XoHM80tVabiSJD0ZtIvm2atpQQaPrsjcN5J8mVQv";
+$acces_token_secret = "aKELAjYSziXQQVp1VzNFzQblBq460WLc68XrZIKm3gS2N";
 
 // list id
 $list_id = 220539461;
