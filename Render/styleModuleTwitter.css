@@ -1,0 +1,13 @@
+ul.tweet_share
+{
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+}
+.tweet_share li{
+    display: inline-block;
+    margin: 10px;
+}
+.tweet_share li:nth-child(1){
+    margin-left: 0;
+}
