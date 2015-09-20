@@ -46,10 +46,10 @@ foreach($content as $x => $y):
             <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12"><?php echo twitter_it($y->text); ?></div>
         </div>
         <div class="row">
-            <?php if($y->medial_url){
-                ?>
+            <?php if($y->media_url){ ?>
+                <a href="">Afficher la photo</a>
                 <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
-                     <img class="img-responsive hidden" id="hidden" src="<?php echo $y->media_url; ?>">
+                     <img class="img-responsive" src="<?php echo $y->media_url; ?>">
                 </div>
             <?php } ?>
         </div>
