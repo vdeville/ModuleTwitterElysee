@@ -20,6 +20,7 @@ class Tweets extends Abraham\TwitterOAuth\TwitterOAuth{
         $clean_array = array();
         foreach($list_tweets as $id_array => $object){
 
+            //var_dump($object);
             // Create simple array with clean data (no need to use the complex std object sended)
             $clean_array[$id_array]["created_at"] = $object->created_at;
             $clean_array[$id_array]["id_tweet"] = $object->id;
@@ -33,6 +34,14 @@ class Tweets extends Abraham\TwitterOAuth\TwitterOAuth{
             // check if there is an image in the tweet
             if(!empty($object->retweeted_status->entities->media)){
                 $media = $object->retweeted_status->entities->media;
+                $media_obj = $media[0];
+                $clean_array[$id_array]["media_id"] = $media_obj->id;
+                $clean_array[$id_array]["media_url"] = $media_obj->media_url;
+                $clean_array[$id_array]["media_type"] = $media_obj->type;
+            }
+
+            if(!empty($object->entities->media)){
+                $media = $object->entities->media;
                 $media_obj = $media[0];
                 $clean_array[$id_array]["media_id"] = $media_obj->id;
                 $clean_array[$id_array]["media_url"] = $media_obj->media_url;
