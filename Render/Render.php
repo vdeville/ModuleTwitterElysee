@@ -1,12 +1,3 @@
-<!-- Optional theme -->
-<html>
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styleModuleTwitter.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-</head>
-<body>
-<meta charset="UTF-8">
 <div class="container-fluid">
 <?php
 
@@ -55,13 +46,12 @@ foreach($content as $x => $y):
             <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12"><?php echo twitter_it($y->text); ?></div>
         </div>
         <div class="row">
-            <?php if($y->medial_url != ""){
+            <?php if($y->medial_url){
                 ?>
                 <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
-                    <img class="img-responsive" src="<?php echo $y->media_url; ?>">
+                     <img class="img-responsive hidden" id="hidden" src="<?php echo $y->media_url; ?>">
                 </div>
             <?php } ?>
-            <?php echo $y->media_url; ?>
         </div>
         <div class="row">
             <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
@@ -74,92 +64,7 @@ foreach($content as $x => $y):
         </div>
     </div>
     <br />
-    <br />
-    <br /> <!-- Temporaire BR IS IN THE PLACE-->
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
     <?php
 endforeach;
 ?>
-    </div>
-<div style="display: block;" id="tweet_<?php echo $y->id_tweeter; ?>" class="tweet block social twitter"
-     data-id="<?php echo $y->id_tweeter; ?>">
-    <div class="left">
-        <img alt="" src="http://pbs.twimg.com/profile_images/461155610780639232/85wihRrQ.jpeg" width="35"
-             height="35">
-    </div>
-    <div class="right block-content">
-        <span class="name"><a title="Voir le compte Twitter de Philippe Nauche (nouvelle fenêtre)"
-                              href="https://twitter.com/intent/user?screen_name=<?php echo $y->screen_name; ?>"
-                              target="_blank">Philippe Nauche @PhilippeNauche</a></span>
-        <div id="tweettext_<?php echo $y->id_tweet; ?>" class="tweet-text">
-            <a class="twitter-atreply" title="Voir le compte Twitter de François Hollande (nouvelle fenêtre)"
-               href="http://twitter.com/<?php echo $y->screen_name; ?>" rel="nofollow" target="_blank"
-               data-screen-name="fhollande">@fhollande</a> <a class="twitter-atreply"
-                                                              title="Voir le compte Twitter de Élysée (nouvelle fenêtre)"
-                                                              href="http://twitter.com/Elysee" rel="nofollow"
-                                                              target="_blank" data-screen-name="Elysee">@Elysee</a>
-            répond aux journalistes à la centrale photovoltaïque de Gros-Chastang <a class="twitter-hashtag"
-                                                                                     title="Voir les tweets sur #Corrèze (nouvelle fenêtre)"
-                                                                                     href="http://twitter.com/#!/search?q=%23Corr%C3%A8ze"
-                                                                                     rel="nofollow" target="_blank">#Corrèze</a>
-            <a class="twitter-hashtag" title="Voir les tweets sur #directPR (nouvelle fenêtre)"
-               href="http://twitter.com/#!/search?q=%23directPR" rel="nofollow" target="_blank">#directPR</a>
-        </div>
-        <div class="post">
-            <!--            DATE DU TWEET QUI RENVOI SUR LE TWEET -->
-            <a title="" href="https://twitter.com/<?php echo $y->screen_name . '/status/' . $y->id_tweet; ?>"
-               target="_blank"><?php echo $y->created_at; ?></a></div>
-        <?php if($y->medial_url != ""){
-            ?>
-            <div style="height: 193.5px;" class="media-wrapper" role="button" tabIndex="0">
-                <img class="expendable" title="Cliquez sur cette photo pour la voir en entier"
-                     alt="Cliquez sur cette photo pour la voir en entier" src="<?php echo $y->media_url; ?>">
-            </div>
-        <?php } ?>
-        <div class="share twitter-share">
-            <ul>
-                <li class="first">
-                    <a title="Répondre à ce tweet (nouvelle fenêtre)"
-                       href="https://twitter.com/intent/tweet?in_reply_to=<?php echo $y->id_tweet; ?>&amp;related=fhollande,elysee,elysee_com"
-                       target="_blank">
-                        <img role="img" aria-describedby="tweettext_<?php echo $y->id_tweet; ?>"
-                             alt="Répondre à ce tweet (nouvelle fenêtre)"
-                             src="/elysee/images/blocks/pictos/tw_answer.svg" width="20" height="12">
-                    </a>
-                </li>
-                <li>
-                    <a title="Retweeter ce tweet (nouvelle fenêtre)"
-                       href="https://twitter.com/intent/retweet?tweet_id=<?php echo $y->id_tweet; ?>&amp;related=fhollande,elysee,elysee_com"
-                       target="_blank">
-                        <img role="img" aria-describedby="tweettext_<?php echo $y->id_tweet; ?>"
-                             alt="Retweeter ce tweet (nouvelle fenêtre)"
-                             src="/elysee/images/blocks/pictos/tw_retweet.svg" width="22" height="14">
-                    </a>
-                    <span class="number"><span class="screenreader_visible">retweet</span></span>
-                </li>
-                <li class="last">
-                    <a title="Ajouter ce tweet à ses favoris (nouvelle fenêtre)"
-                       href="https://twitter.com/intent/favorite?tweet_id=<?php echo $y->id_tweet; ?>&amp;related=fhollande,elysee,elysee_com"
-                       target="_blank">
-                        <img role="img" aria-describedby="tweettext_<?php echo $y->id_tweet; ?>"
-                             alt="Ajouter ce tweet à ses favoris (nouvelle fenêtre)"
-                             src="/elysee/images/blocks/pictos/tw_star.svg" width="17" height="16">
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
 </div>
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</body>
-</html>
