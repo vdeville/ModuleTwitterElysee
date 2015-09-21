@@ -15,6 +15,8 @@ function twitter_it($text)
 $content = file_get_contents("../Data/data.json");
 $content = json_decode($content);
 
+//var_dump($content);
+
 foreach($content as $x => $y):
 //    echo $y->created_at . "    Date création <br />";
 //    echo $y->id_tweet . "    ID du tweet <br />";
@@ -46,10 +48,10 @@ foreach($content as $x => $y):
             <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12"><?php echo twitter_it($y->text); ?></div>
         </div>
         <div class="row">
-            <?php if($y->media_url){ ?>
-                <a href="">Afficher la photo</a>
-                <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
-                     <img class="img-responsive" src="<?php echo $y->media_url; ?>">
+            <?php if(isset($y->media_url)){ ?>
+                <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12" >
+                     <a onclick='toggleTable("<?php echo $y->media_id ?>");' href='javascript:void(0)'>Afficher le media</a>
+                     <img id="<?php echo $y->media_id ?>" class="img-responsive" style="display:none" src="<?php echo $y->media_url; ?>">
                 </div>
             <?php } ?>
         </div>
