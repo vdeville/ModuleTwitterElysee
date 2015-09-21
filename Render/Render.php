@@ -50,7 +50,7 @@ foreach($content as $x => $y):
         <div class="row">
             <?php if(isset($y->media_url)){ ?>
                 <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12" >
-                     <a onclick='toggleTable("<?php echo $y->media_id ?>");' href='javascript:void(0)'>Afficher le media</a>
+                     <a onclick='toggleImage("<?php echo $y->media_id ?>");' href='javascript:void(0)'>Afficher le media</a>
                      <img id="<?php echo $y->media_id ?>" class="img-responsive" style="display:none" src="<?php echo $y->media_url; ?>">
                 </div>
             <?php } ?>
