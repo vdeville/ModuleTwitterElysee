@@ -15,7 +15,7 @@
             setInterval(function () {
                 $scores.load("index.php #test");
                 console.log("Refresh Ok");
-            }, 5000);
+            }, 30000);
         </script>
     </div>
 </body>
